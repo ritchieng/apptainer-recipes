@@ -1,8 +1,8 @@
 # Singularity Containers for Data and AI
-Readily available definition and image files for quick experimentation and deployment of data and machine learning workloads.
+Readily available definition and image files for quick experimentation and deployment of data and machine learning workload through [Singularity](https://sylabs.io/guides/3.0/user-guide/index.html).
 
 ## Instructions
-
+All you need is to install [Singularity](https://sylabs.io/guides/3.0/user-guide/index.html) to be able to leverage on this repository to work in containers with multiple environments (CPU/GPU with any packages and OS) independent of your host (local) machine.
 
 ### Option A: Transparent Image Container Workflow
 
@@ -13,6 +13,9 @@ To build and test singularity image container, simply run the following command 
 ```
 bash build_simg.sh
 ```
+
+### Notes
+If you do not have a GPU on your host or local machine, the image will still be built and can be shared and used by machines with GPUs! The test for CUDA will fail on your local machine without GPU which will just spit out an error that you do not have a driver. There's nothing to worry about that.
 
 ### Option B: Blackbox
 This is not recommended to build production singularity containers but it is good for experimentation to determine the right configuration to put into your definition file for `Option A`.
