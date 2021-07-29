@@ -15,6 +15,3 @@ pip install --upgrade pip
 
 # pytorch
 conda install pytorch torchvision torchaudio cudatoolkit=11.1 -c pytorch -c nvidia
-
-# scikit-learn
-conda install -c anaconda scikit-learn
