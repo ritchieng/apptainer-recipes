@@ -9,9 +9,24 @@ export PATH=/opt/conda/bin:$PATH
 apt-get update
 apt-get install -y tree
 
+apt-get install unixodbc -y
+apt-get install unixodbc-dev -y
+apt-get install freetds-dev -y
+apt-get install freetds-bin -y
+apt-get install tdsodbc -y
+apt-get install --reinstall build-essential -y
+
+echo "[FreeTDS]\n\
+Description = FreeTDS unixODBC Driver\n\
+Driver = /usr/lib/x86_64-linux-gnu/odbc/libtdsodbc.so\n\
+Setup = /usr/lib/x86_64-linux-gnu/odbc/libtdsS.so" >> /etc/odbcinst.ini
+
 conda update conda
 
 pip install --upgrade pip
+
+# pydboc
+conda install -c conda-forge pyodbc sqlalchemy
 
 # streamlit
 conda install -c conda-forge streamlit
