@@ -14,6 +14,17 @@ To build and test singularity image container, simply run the following command 
 bash build_simg.sh
 ```
 
+#### 2. Run container
+For CPU
+```
+singularity shell singularity_container_$VER_sandbox.simg
+```
+
+For GPU
+```
+singularity shell --nv singularity_container_$VER_sandbox.simg
+```
+
 ### Notes
 If you do not have a GPU on your host or local machine, the image will still be built and can be shared and used by machines with GPUs! The test for CUDA will fail on your local machine without GPU which will just spit out an error that you do not have a driver. There's nothing to worry about that.
 

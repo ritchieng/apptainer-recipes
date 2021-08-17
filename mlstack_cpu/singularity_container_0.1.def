@@ -14,14 +14,13 @@ conda update conda
 pip install --upgrade pip
 
 # pytorch
-conda install pytorch torchvision torchaudio cudatoolkit=11.1 -c pytorch -c nvidia
+conda install pytorch torchvision torchaudio cpuonly -c pytorch
 
 # scikit
 conda install -c anaconda scikit-learn
 
 # spacy
 conda install -c conda-forge spacy
-conda install -c conda-forge cupy
 
 # huggingface transformers
 conda install -c huggingface transformers

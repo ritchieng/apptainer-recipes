@@ -14,7 +14,7 @@ conda update conda
 pip install --upgrade pip
 
 # pytorch
-conda install pytorch torchvision torchaudio cudatoolkit=11.1 -c pytorch -c nvidia
+conda install pytorch torchvision torchaudio cpuonly -c pytorch
 
 # sympy
 conda install -c conda-forge sympy
@@ -37,8 +37,8 @@ conda install -c conda-forge pyarrow
 # matplotlib
 conda install -c conda-forge matplotlib
 
-# pandas/number
-conda install -c conda-forge pandas numpy
+# pandas/numpy/modin
+conda install -c conda-forge pandas numpy modin
 
 # jupyter 
 conda install -c conda-forge jupyterlab ipykernel

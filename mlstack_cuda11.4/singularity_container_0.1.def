@@ -1,0 +1,39 @@
+Bootstrap: docker
+
+From: nvcr.io/nvidia/pytorch:21.07-py3
+
+# scikit
+conda install -c anaconda scikit-learn
+
+# spacy
+conda install -c conda-forge spacy
+conda install -c conda-forge cupy
+
+# huggingface transformers
+conda install -c huggingface transformers
+
+# spacy training
+pip install spacy-transformers
+pip install spacy-lookups-data
+
+# spacy eng
+python -m spacy download en_core_web_trf
+
+# streamlit
+conda install -c conda-forge streamlit
+
+# streamlit spacy
+pip install spacy_streamlit
+
+# pyarrow
+conda install -c conda-forge pyarrow
+
+# matplotlib
+conda install -c conda-forge matplotlib
+
+# pandas numpy modin
+conda install -c conda-forge pandas numpy modin
+
+# jupyter
+conda install -c conda-forge jupyterlab ipykernel
+pip install jupyterlab_theme_solarized_dark
