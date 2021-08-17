@@ -10,7 +10,4 @@ singularity exec --nv ${IMAGE_NAME} python -c "import torch;print('pytorch versi
 # Test pytorch gpu
 singularity exec --nv ${IMAGE_NAME} python -c "import torch;print('pytorch cuda avail: ' + torch.cuda.is_available())"
 
-# Test pillow
-singularity exec --nv ${IMAGE_NAME} python -c "import PIL; print('PIL version: ' + PIL.__version__)"
-
 echo image: ${IMAGE_NAME}

@@ -1,17 +1,3 @@
 Bootstrap: docker
 
-From: continuumio/anaconda3:2021.05
-
-%post
-export PATH=/opt/conda/bin:$PATH
-
-# update
-apt-get update
-apt-get install -y tree
-
-conda update conda 
-
-pip install --upgrade pip
-
-# pytorch
-conda install pytorch torchvision torchaudio cudatoolkit=11.1 -c pytorch -c nvidia
+From: nvcr.io/nvidia/pytorch:21.07-py3
