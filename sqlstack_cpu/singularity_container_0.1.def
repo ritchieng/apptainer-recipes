@@ -25,21 +25,24 @@ conda update conda
 
 pip install --upgrade pip
 
+# mamba
+conda install mamba -c conda-forge
+
 # pydboc
-conda install -c conda-forge pyodbc sqlalchemy
+mamba install -c conda-forge pyodbc sqlalchemy
 
 # streamlit
-conda install -c conda-forge streamlit
+mamba install -c conda-forge streamlit
 
 # pyarrow
-conda install -c conda-forge pyarrow
+mamba install -c conda-forge pyarrow
 
 # matplotlib
-conda install -c conda-forge matplotlib
+mamba install -c conda-forge matplotlib
 
 # pandas numpy modin
-conda install -c conda-forge pandas numpy modin
+mamba install -c conda-forge numpy modin-ray
 
 # jupyter
-conda install -c conda-forge jupyterlab ipykernel
+mamba install -c conda-forge jupyterlab ipykernel
 pip install jupyterlab_theme_solarized_dark

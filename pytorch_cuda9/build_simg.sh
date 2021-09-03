@@ -5,7 +5,7 @@ IMAGE_NAME=./singularity_container_${VER}.simg
 sudo singularity build ${IMAGE_NAME} ./singularity_container_${VER}.def
 
 # Test pytorch
-singularity exec --nv ${IMAGE_NAME} python -c "import torch;print('pytorch version: ' + torch.__version__)"
+singularity exec ${IMAGE_NAME} python -c "import torch;print('pytorch version: ' + torch.__version__)"
 
 # Test pytorch gpu
 singularity exec --nv ${IMAGE_NAME} python -c "import torch;print('pytorch cuda avail: ' + torch.cuda.is_available())"

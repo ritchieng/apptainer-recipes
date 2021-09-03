@@ -5,23 +5,41 @@ From: nvcr.io/nvidia/pytorch:21.07-py3
 %post
 export PATH=/opt/conda/bin:$PATH
 
+# install java 8
+apt-get update
+apt-get install -y openjdk-8-jdk-headless
+apt-get clean
+apt-get update
+apt-get install ca-certificates-java
+apt-get clean
+update-ca-certificates -f
+export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64/
+
 # update
 apt-get update
 apt-get install -y tree
 
+# upgrade package managers
 conda update conda
-
 pip install --upgrade pip
 
+# mamba
+conda install mamba -c conda-forge
+
 # scikit
-conda install -c anaconda scikit-learn
+mamba install -c anaconda scikit-learn
+
+# nlu jsl
+pip install nlu pyspark==3.0.2
 
 # spacy
-conda install -c conda-forge spacy
-conda install -c conda-forge cupy
+mamba install -c conda-forge spacy
+
+# cupy numpy
+mamba install -c conda-forge cupy
 
 # huggingface transformers
-conda install -c huggingface transformers
+mamba install -c huggingface transformers
 
 # spacy training
 pip install spacy-transformers
@@ -31,17 +49,17 @@ pip install spacy-lookups-data
 python -m spacy download en_core_web_trf
 
 # streamlit
-conda install -c conda-forge streamlit
+mamba install -c conda-forge streamlit
 
 # pyarrow
-conda install -c conda-forge pyarrow
+mamba install -c conda-forge pyarrow
 
 # matplotlib
-conda install -c conda-forge matplotlib
+mamba install -c conda-forge matplotlib
 
-# pandas numpy modin
-conda install -c conda-forge pandas numpy modin
+# pandas modin
+mamba install -c conda-forge modin-ray
 
 # jupyter
-conda install -c conda-forge jupyterlab ipykernel
+mamba install -c conda-forge jupyterlab ipykernel
 pip install jupyterlab_theme_solarized_dark

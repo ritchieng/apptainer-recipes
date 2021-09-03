@@ -5,51 +5,67 @@ From: continuumio/anaconda3:2021.05
 %post
 export PATH=/opt/conda/bin:$PATH
 
+# install java 8
+mkdir -p /usr/share/man/man1
+apt-get update
+apt-get install -y software-properties-common
+# apt-get install -y gpg-agent
+# add-apt-repository ppa:openjdk-r/ppa
+apt-add-repository 'deb http://security.debian.org/debian-security stretch/updates main'
+apt-get update
+apt-get install -y openjdk-8-jdk-headless
+apt-get clean
+apt-get update
+apt-get install ca-certificates-java
+apt-get clean
+update-ca-certificates -f
+export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64/
+
 # update
 apt-get update
 apt-get install -y tree
 
+# upgrade package managers
 conda update conda
-
 pip install --upgrade pip
 
-# pytorch
-conda install pytorch torchvision torchaudio cpuonly -c pytorch
+# mamba
+conda install mamba -c conda-forge
+
+# pytorch cpu
+mamba install pytorch torchvision torchaudio cpuonly -c pytorch
 
 # scikit
-conda install -c anaconda scikit-learn
+mamba install -c anaconda scikit-learn
+
+# nlu jsl
+pip install nlu pyspark==3.0.2
 
 # spacy
-conda install -c conda-forge spacy
+mamba install -c conda-forge spacy
+
+# numpy
+mamba install -c conda-forge numpy
 
 # huggingface transformers
-conda install -c huggingface transformers
+mamba install -c huggingface transformers
 
 # spacy training
 pip install spacy-transformers
 pip install spacy-lookups-data
 
-# spacy eng
-python -m spacy download en_core_web_trf
-
 # streamlit
-conda install -c conda-forge streamlit
-
-# streamlit spacy
-pip install spacy_streamlit
-
-# sftp
-conda install -c conda-forge pysftp
+mamba install -c conda-forge streamlit
 
 # pyarrow
-conda install -c conda-forge pyarrow
+mamba install -c conda-forge pyarrow
 
 # matplotlib
-conda install -c conda-forge matplotlib
+mamba install -c conda-forge matplotlib
 
-# pandas numpy modin
-conda install -c conda-forge pandas numpy modin
+# pandas modin
+mamba install -c conda-forge modin-ray
 
 # jupyter
-conda install -c conda-forge jupyterlab ipykernel
+mamba install -c conda-forge jupyterlab ipykernel
 pip install jupyterlab_theme_solarized_dark
