@@ -13,36 +13,42 @@ conda update conda
 
 pip install --upgrade pip
 
+# mamba
+conda install mamba -c conda-forge
+
 # pytorch
-conda install pytorch torchvision torchaudio cpuonly -c pytorch
+mamba install pytorch torchvision torchaudio cpuonly -c pytorch
 
 # sympy
-conda install -c conda-forge sympy
+mamba install -c conda-forge sympy
 
 # numpy
-conda install -c conda-forge numpy
+mamba install -c conda-forge numpy
 
 # scipy
-conda install -c conda-forge scipy
+mamba install -c conda-forge scipy
 
 # statsmodel
-conda install -c conda-forge statsmodels
+mamba install -c conda-forge statsmodels
 
 # scikit
-conda install -c anaconda scikit-learn
+mamba install -c anaconda scikit-learn
 
 # pyarrow
-conda install -c conda-forge pyarrow
+mamba install -c conda-forge pyarrow
 
 # matplotlib
-conda install -c conda-forge matplotlib
+mamba install -c conda-forge matplotlib
 
 # pandas / modin
-conda install -c conda-forge pandas modin-ray
+mamba install -c conda-forge modin-ray
 
 # jupyter 
-conda install -c conda-forge jupyterlab ipykernel
+mamba install -c conda-forge jupyterlab ipykernel
 pip install jupyterlab_theme_solarized_dark
 
 # r
-conda install -c conda-forge r r-base r-essentials
+mamba install -c conda-forge r r-base r-essentials
+
+# c++ has to be installed in separate container due to conflicts
+# mamba install -c xeus-cling xeus-cling
