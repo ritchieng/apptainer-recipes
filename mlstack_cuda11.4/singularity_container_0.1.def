@@ -33,9 +33,6 @@ python -m spacy download en_core_web_trf
 # streamlit
 conda install -c conda-forge streamlit
 
-# streamlit spacy
-pip install spacy_streamlit
-
 # pyarrow
 conda install -c conda-forge pyarrow
 

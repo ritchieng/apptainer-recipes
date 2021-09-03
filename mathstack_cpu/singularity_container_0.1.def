@@ -9,7 +9,7 @@ export PATH=/opt/conda/bin:$PATH
 apt-get update
 apt-get install -y tree
 
-conda update conda 
+conda update conda
 
 pip install --upgrade pip
 
@@ -23,7 +23,7 @@ conda install -c conda-forge sympy
 conda install -c conda-forge numpy
 
 # scipy
-conda install -c conda-forge numpy
+conda install -c conda-forge scipy
 
 # statsmodel
 conda install -c conda-forge statsmodels
@@ -37,9 +37,12 @@ conda install -c conda-forge pyarrow
 # matplotlib
 conda install -c conda-forge matplotlib
 
-# pandas/numpy/modin
-conda install -c conda-forge pandas numpy modin
+# pandas / modin
+conda install -c conda-forge pandas modin-ray
 
 # jupyter 
 conda install -c conda-forge jupyterlab ipykernel
 pip install jupyterlab_theme_solarized_dark
+
+# r
+conda install -c conda-forge r r-base r-essentials
