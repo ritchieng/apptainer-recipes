@@ -1,0 +1,88 @@
+Bootstrap: docker
+
+From: nvcr.io/nvidia/pytorch:21.10-py3
+ 
+%post
+export PATH=/opt/conda/bin:$PATH
+export DEBIAN_FRONTEND=noninteractive
+export TZ="Asia/Singapore"
+
+# install java 8
+apt-get update
+apt-get install -y openjdk-8-jdk-headless
+apt-get clean
+apt-get update
+apt-get install ca-certificates-java
+apt-get clean
+update-ca-certificates -f
+export JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64/
+
+# ppa manager
+apt-get update
+apt-get install -y software-properties-common
+curl -sSL https://packages.microsoft.com/keys/microsoft.asc | apt-key add -
+apt-get update
+apt-add-repository https://packages.microsoft.com/ubuntu/20.04/prod
+
+# update
+apt-get update
+apt-get install -y tree
+
+
+ 
+# odbc
+ACCEPT_EULA=Y apt-get install -y msodbcsql17
+ACCEPT_EULA=Y apt-get install -y mssql-tools
+apt-get install -y unixodbc-dev
+ 
+# upgrade package managers
+conda update conda
+pip install --upgrade pip
+
+# mamba
+conda install mamba -c conda-forge
+
+# pyodbc
+mamba install -c anaconda pyodbc
+
+# snowflake
+conda install -c conda-forge snowflake-connector-python
+
+# scikit
+mamba install -c anaconda scikit-learn
+mamba install -c conda-forge lightgbm scikit-optimize
+
+# nlu jsl
+pip install nlu pyspark==3.0.2
+
+# spacy
+mamba install -c conda-forge spacy
+
+# cupy numpy
+mamba install -c conda-forge cupy
+
+# huggingface transformers
+mamba install -c huggingface transformers
+
+# spacy training
+pip install spacy-transformers
+pip install spacy-lookups-data
+
+# spacy eng
+python -m spacy download en_core_web_trf
+
+# pyarrow
+mamba install -c conda-forge pyarrow
+
+# matplotlib
+mamba install -c conda-forge matplotlib
+
+# pandas modin
+mamba install -c conda-forge modin-ray
+
+# jupyter
+mamba install -c conda-forge ipykernel=6.2.0 jupyterlab=3.1.7 jupyter_client=6.1.12 ipywidgets=7.6.3 traitlets=5.0.5
+pip install jupyterlab_theme_solarized_dark
+
+# streamlit
+mamba install -c conda-forge streamlit=1.2.0
