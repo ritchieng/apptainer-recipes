@@ -1,4 +1,4 @@
-VER=0.1
+VER=0.2
 IMAGE_NAME=./singularity_container_${VER}.simg
 
 # Build

@@ -50,5 +50,8 @@ pip install jupyterlab_theme_solarized_dark
 # r
 mamba install -c conda-forge r r-base r-essentials
 
+# rich
+mamba install -c conda-forge rich
+
 # c++ has to be installed in separate container due to conflicts
 # mamba install -c xeus-cling xeus-cling
