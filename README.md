@@ -78,4 +78,4 @@ singularity exec lolcow.sif cowsay moo
 ```
 
 ## Questions
-For questions, please raise an issue. This is actively maintained by [Ritchie Ng](https://github.com/ritchieng).
+For questions, please raise an issue. This is maintained by [Ritchie Ng](https://github.com/ritchieng).
