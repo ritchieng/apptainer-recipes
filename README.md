@@ -1,8 +1,8 @@
 # Singularity Containers for Data and AI
-Readily available definition and image files for quick experimentation and deployment of data and machine learning workload through [Singularity](https://sylabs.io/guides/3.0/user-guide/index.html).
+Readily available definition and image files for quick experimentation and deployment of data, deep learning, machine learning, and LLM workloads through [Singularity](https://docs.sylabs.io/guides/4.0/user-guide/index.html).
 
 ## Instructions
-All you need is to install [Singularity](https://sylabs.io/guides/3.0/user-guide/index.html) to be able to leverage on this repository to work in containers with multiple environments (CPU/GPU with any packages and OS) independent of your host (local) machine.
+All you need is to install [Singularity](https://docs.sylabs.io/guides/4.0/user-guide/index.html) to be able to leverage on this repository to work in containers with multiple environments (CPU/GPU with any packages and OS) independent of your host (local) machine.
 
 ### Option A: Transparent Image Container Workflow
 
