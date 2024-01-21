@@ -55,5 +55,27 @@ singularity shell --writable singularity_container_$VER_sandbox
 singularity build --sandbox singularity_container_$VER_sandbox.sif singularity_container_$VER_img
 ``` 
 
-### Questions
+## Basic Singularity Commands
+
+This provides a list of useful commands.
+
+```
+# test singularity
+singularity version
+
+# pull cowsay container from docker
+singularity pull docker://sylabsio/lolcow
+
+# build (generic that can also build from local definition files, it is like a swiss army knife, more flexible than pull)
+singularity build lolcow.sif docker://sylabsio/lolcow
+
+# run option 1 requiring to shell into the container
+singularity shell lolcow.sif
+cowsay moo
+
+# run option 2 without requiring to shell into the containe
+singularity exec lolcow.sif cowsay moo
+```
+
+## Questions
 For questions, please raise an issue. This is actively maintained by [Ritchie Ng](https://github.com/ritchieng).
