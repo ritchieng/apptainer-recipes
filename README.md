@@ -1,6 +1,12 @@
 # Singularity Containers for Data and AI
 Readily available definition and image files for quick experimentation and deployment of data, deep learning, machine learning, and LLM workloads through [Singularity](https://docs.sylabs.io/guides/4.0/user-guide/index.html).
 
+## Available Container Definitions
+- GPU containers: `./containers/gpu`
+  - Retrieval Augmented Generation (RAG) workloads: `./containers/gpu/rag`
+- CPU containers: `./containers/cpu`
+  - Math workloads: `./containers/cpu/math`
+
 ## Instructions
 All you need is to install [Singularity](https://docs.sylabs.io/guides/4.0/user-guide/index.html) to be able to leverage on this repository to work in containers with multiple environments (CPU/GPU with any packages and OS) independent of your host (local) machine.
 
