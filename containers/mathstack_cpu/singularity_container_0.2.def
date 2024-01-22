@@ -1,0 +1,54 @@
+Bootstrap: docker
+
+From: continuumio/anaconda3
+
+%post
+export PATH=/opt/conda/bin:$PATH
+
+# update
+apt-get update
+apt-get install -y tree
+
+conda update conda
+
+pip install --upgrade pip
+
+# pytorch cpu
+conda install pytorch torchvision torchaudio cpuonly -c pytorch
+
+# sympy
+conda install -c conda-forge sympy
+
+# numpy
+conda install -c conda-forge numpy
+
+# scipy
+conda install -c conda-forge scipy
+
+# statsmodel
+conda install -c conda-forge statsmodels
+
+# scikit
+conda install -c anaconda scikit-learn
+
+# pyarrow
+conda install -c conda-forge pyarrow
+
+# matplotlib
+conda install -c conda-forge matplotlib
+
+# pandas / modin
+conda install -c conda-forge modin-ray
+
+# jupyter 
+conda install -c conda-forge jupyterlab ipykernel
+pip install jupyterlab_theme_solarized_dark
+
+# r
+conda install -c conda-forge r r-base r-essentials
+
+# rich
+conda install -c conda-forge rich
+
+# c++ has to be installed in separate container due to conflicts
+# mamba install -c xeus-cling xeus-cling

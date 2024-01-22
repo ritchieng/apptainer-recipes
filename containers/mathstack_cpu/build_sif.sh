@@ -1,5 +1,5 @@
 VER=0.2
-IMAGE_NAME=./singularity_container_${VER}.simg
+IMAGE_NAME=./singularity_container_${VER}.sif
 
 # Build
 sudo singularity build ${IMAGE_NAME} ./singularity_container_${VER}.def
