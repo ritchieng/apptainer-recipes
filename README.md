@@ -14,8 +14,16 @@ Readily available definition and image files for quick experimentation and deplo
   - Math workloads: `cd ./containers/cpu/math`
     - Run `singularity shell singularity_container_0.2.sif`
 
-## Instructions
+## Instructions for Installing Singularity
+
+### Install Singularity
 All you need is to install [Singularity](https://docs.sylabs.io/guides/4.0/user-guide/index.html) to be able to leverage on this repository to work in containers with multiple environments (CPU/GPU with any packages and OS) independent of your host (local) machine.
+
+### Install NVIDIA libraries
+I advise you to use the [Lambda Stack](https://lambdalabs.com/lambda-stack-deep-learning-software) to manage your drivers effectively without errors. It's a single bash script that allows you to install and upgrade your NVIDIA drivers.
+
+
+## Instructions to Use Singularity in CPU/GPU Mode
 
 ### Option A: Transparent Image Container Workflow
 
@@ -35,7 +43,7 @@ singularity shell singularity_container_$VER_sandbox.sif
 
 For GPU
 ```
-singularity shell --nv singularity_container_$VER_sandbox.sif
+singularity shell --nv --nvccli singularity_container_$VER_sandbox.sif
 ```
 
 ### Notes

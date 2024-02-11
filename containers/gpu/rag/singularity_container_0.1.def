@@ -1,4 +1,0 @@
-Bootstrap: docker
-
-# ollama containers https://github.com/iportilla/ollama-lab
-From: ollama/ollama:latest
