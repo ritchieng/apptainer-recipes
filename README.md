@@ -3,9 +3,16 @@ Readily available definition and image files for quick experimentation and deplo
 
 ## Available Container Definitions
 - GPU containers: `./containers/gpu`
-  - Retrieval Augmented Generation (RAG) workloads: `./containers/gpu/rag`
+  - Ollama workloads: `cd ./containers/gpu/ollama`
+    - To run ollama with mistral
+      - Run 1nd session `singularity shell singularity_container_0.1.sif`
+        - `ollama serve`
+      - Run 2nd session (another window) `singularity shell singularity_container_0.1.sif`
+        - `ollama run mistral`
+        - You can now communicate with mistral model in your bash
 - CPU containers: `./containers/cpu`
-  - Math workloads: `./containers/cpu/math`
+  - Math workloads: `cd ./containers/cpu/math`
+    - Run `singularity shell singularity_container_0.2.sif`
 
 ## Instructions
 All you need is to install [Singularity](https://docs.sylabs.io/guides/4.0/user-guide/index.html) to be able to leverage on this repository to work in containers with multiple environments (CPU/GPU with any packages and OS) independent of your host (local) machine.
@@ -14,21 +21,21 @@ All you need is to install [Singularity](https://docs.sylabs.io/guides/4.0/user-
 
 This is recommended to build singularity containers as it's transparent with the greatest reproducibility.
 
-#### 1. Build container (`.simg` or `.sif`)
+#### 1. Build container (`.sif`)
 To build and test singularity image container, simply run the following command in any of the folders:
 ```
-bash build_simg.sh
+bash build_sif.sh
 ```
 
 #### 2. Run container
 For CPU
 ```
-singularity shell singularity_container_$VER_sandbox.simg
+singularity shell singularity_container_$VER_sandbox.sif
 ```
 
 For GPU
 ```
-singularity shell --nv singularity_container_$VER_sandbox.simg
+singularity shell --nv singularity_container_$VER_sandbox.sif
 ```
 
 ### Notes
@@ -39,15 +46,15 @@ This is not recommended to build production singularity containers but it is goo
 
 Note, replace `$VER` with whatever version is in the specific folder.
 
-#### 1. Build container (`.simg` or `.sif`)
+#### 1. Build container (`.sif`)
 To build and test singularity image container, simply run the following command in any of the folders:
 ```
-bash build_simg.sh
+bash build_simf.sh
 ```
 
 #### 2. Convert container to mutable sandbox
 ```
-singularity build --sandbox singularity_container_$VER_sandbox singularity_container_$VER.simg
+singularity build --sandbox singularity_container_$VER_sandbox singularity_container_$VER.sif
 ``` 
 
 #### 3. Shell into writable sandbox
@@ -56,7 +63,7 @@ You can install new packages and make persisting changes to the container in thi
 singularity shell --writable singularity_container_$VER_sandbox
 ```
 
-#### 4. Convert container to immutable image (`.simg` or `.sif`)
+#### 4. Convert container to immutable image (`.sif`)
 ```
 singularity build --sandbox singularity_container_$VER_sandbox.sif singularity_container_$VER_img
 ``` 
