@@ -43,7 +43,7 @@ singularity shell singularity_container_$VER_sandbox.sif
 
 For GPU
 ```
-singularity shell --nv --nvccli singularity_container_$VER_sandbox.sif
+singularity shell --nv singularity_container_$VER_sandbox.sif
 ```
 
 ### Notes
