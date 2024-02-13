@@ -24,6 +24,17 @@ I advise you to use the [Lambda Stack](https://lambdalabs.com/lambda-stack-deep-
 
 Check CUDA toolkit installation via `nvcc -V`
 
+## Set NVIDIA Container CLI Singularity Paths
+To set
+```
+sudo singularity config global --set "nvidia-container-cli path" "/usr/bin/nvidia-container-cli"
+```
+
+To check
+```
+sudo singularity config global --get "nvidia-container-cli path"
+```
+
 ## Instructions to Use Singularity in CPU/GPU Mode
 
 ### Option A: Transparent Image Container Workflow
@@ -42,9 +53,9 @@ For CPU
 singularity shell singularity_container_$VER_sandbox.sif
 ```
 
-For GPU
+For GPU using NVIDIA Container CLI
 ```
-singularity shell --nv singularity_container_$VER_sandbox.sif
+singularity shell --nv --nvccli singularity_container_$VER_sandbox.sif
 ```
 
 A quick way to test if you're able have everything good to run is to run `nvidia-smi` when you shell into the container. 
