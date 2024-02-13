@@ -99,6 +99,9 @@ cowsay moo
 
 # run option 2 without requiring to shell into the container
 singularity exec lolcow.sif cowsay moo
+
+# clean cache during builds
+singularity cache clean
 ```
 
 ## Questions
