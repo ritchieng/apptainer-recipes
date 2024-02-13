@@ -1,3 +1,10 @@
 Bootstrap: docker
 
 From: tensorflow/tensorflow:latest-gpu
+
+# Singularity does not allow SUID commands
+# Following workaround for ld cache file
+# in writable tmp folder
+
+# %runscript
+# ldconfig -C /tmp/ld.so.cache
