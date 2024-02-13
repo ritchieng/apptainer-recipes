@@ -1,7 +1,7 @@
 # Singularity Containers for Data and AI
 Readily available definition and image files for quick experimentation and deployment of data, deep learning, machine learning, and LLM workloads through [Singularity](https://docs.sylabs.io/guides/4.0/user-guide/index.html).
 
-## Available Containers & Apptainer Definition Files
+## Available Containers & Definition Files
 - GPU containers: `./containers/gpu`
   - Ollama workloads: `cd ./containers/gpu/ollama`
     - To run ollama with mistral
