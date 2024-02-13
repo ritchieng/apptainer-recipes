@@ -17,11 +17,12 @@ Readily available definition and image files for quick experimentation and deplo
 ## Instructions for Installing Singularity
 
 ### Install Singularity
-All you need is to install [Singularity](https://docs.sylabs.io/guides/4.0/user-guide/index.html) to be able to leverage on this repository to work in containers with multiple environments (CPU/GPU with any packages and OS) independent of your host (local) machine.
+All you need is to install [Singularity](https://docs.sylabs.io/guides/4.1/user-guide/index.html) to be able to leverage on this repository to work in containers with multiple environments (CPU/[GPU](https://docs.sylabs.io/guides/4.1/user-guide/gpu.html) with any packages and OS) independent of your host (local) machine.
 
 ### Install NVIDIA libraries
 I advise you to use the [Lambda Stack](https://lambdalabs.com/lambda-stack-deep-learning-software) to manage your drivers effectively without errors. It's a single bash script that allows you to install and upgrade your NVIDIA drivers.
 
+Check CUDA toolkit installation via `nvcc -V`
 
 ## Instructions to Use Singularity in CPU/GPU Mode
 
@@ -45,6 +46,8 @@ For GPU
 ```
 singularity shell --nv singularity_container_$VER_sandbox.sif
 ```
+
+A quick way to test if you're able have everything good to run is to run `nvidia-smi` when you shell into the container. 
 
 ### Notes
 If you do not have a GPU on your host or local machine, the image will still be built and can be shared and used by machines with GPUs! The test for CUDA will fail on your local machine without GPU which will just spit out an error that you do not have a driver. There's nothing to worry about that.
@@ -94,7 +97,7 @@ singularity build lolcow.sif docker://sylabsio/lolcow
 singularity shell lolcow.sif
 cowsay moo
 
-# run option 2 without requiring to shell into the containe
+# run option 2 without requiring to shell into the container
 singularity exec lolcow.sif cowsay moo
 ```
 
