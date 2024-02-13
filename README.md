@@ -5,7 +5,7 @@ Readily available definition and image files for quick experimentation and deplo
 - GPU containers: `./containers/gpu`
   - Ollama workloads: `cd ./containers/gpu/ollama`
     - To run ollama with mistral
-      - Run 1nd session `singularity shell singularity_container_0.1.sif`
+      - Run 1nd session `singularity shell --nv --nvccli singularity_container_0.1.sif`
         - `ollama serve`
       - Run 2nd session (another window) `singularity shell singularity_container_0.1.sif`
         - `ollama run mistral`
