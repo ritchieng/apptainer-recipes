@@ -7,9 +7,20 @@ Readily available definition and image files for quick experimentation and deplo
     - To run ollama with mistral
       - Run 1nd session `singularity shell --nv --nvccli singularity_container_0.1.sif`
         - `ollama serve`
-      - Run 2nd session (another window) `singularity shell singularity_container_0.1.sif`
+      - Run 2nd session (another window) `singularity shell --nv --nvccli singularity_container_0.1.sif``
         - `ollama run mistral`
-        - You can now communicate with mistral model in your bash
+        - You can now communicate with mistral model in your bash, or any other model you can pull on [ollama website](https://ollama.com/)
+  - Llamaindex workloads: `cd ./containers/gpu/llamaindex`
+      - Run 1nd session (first window)`singularity shell --nv --nvccli singularity_container_0.1.sif`
+        - `ollama serve`
+      - Run 2nd session (second window) `singularity shell --nv --nvccli singularity_container_0.1.sif`
+        - `ollama run mistral`
+      - Run 3rd session (third window) `singularity shell --nv --nvccli singularity_container_0.1.sif`
+        - `python`
+        - `from llama_index.llms import Ollama`
+        - `llm = Ollama(model="mistral")`
+        - `response = llm.complete("What is Singapore")`
+        - `print(response)`
 - CPU containers: `./containers/cpu`
   - Math workloads: `cd ./containers/cpu/math`
     - Run `singularity shell singularity_container_0.2.sif`
