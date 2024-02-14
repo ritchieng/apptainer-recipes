@@ -35,7 +35,7 @@ I advise you to use the [Lambda Stack](https://lambdalabs.com/lambda-stack-deep-
 
 Check CUDA toolkit installation via `nvcc -V`
 
-## Set NVIDIA Container CLI Apptainer Paths (Deprecated)
+### Set NVIDIA Container CLI Apptainer Paths (Deprecated)
 
 Not necessary in Apptainer, only in Singularity.
 
