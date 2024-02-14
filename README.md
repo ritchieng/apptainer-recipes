@@ -35,6 +35,25 @@ I advise you to use the [Lambda Stack](https://lambdalabs.com/lambda-stack-deep-
 
 Check CUDA toolkit installation via `nvcc -V`
 
+## Set NVIDIA Container CLI Apptainer Paths (Deprecated)
+
+Not necessary in Apptainer, only in Singularity.
+
+To get nvidia-container-cli path
+```
+which nvidia-container-cli
+```
+
+To set
+```
+sudo singularity config global --set "nvidia-container-cli path" "/usr/bin/nvidia-container-cli"
+```
+
+To check
+```
+sudo singularity config global --get "nvidia-container-cli path"
+```
+
 ## Instructions to Use Apptainer in CPU/GPU Mode
 
 ### Option A: Transparent Image Container Workflow
