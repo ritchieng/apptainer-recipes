@@ -90,7 +90,7 @@ Note, replace `$VER` with whatever version is in the specific folder.
 #### 1. Build container (`.sif`)
 To build and test apptainer image container, simply run the following command in any of the folders:
 ```
-bash build_simf.sh
+bash build_sif.sh
 ```
 
 #### 2. Convert container to mutable sandbox
