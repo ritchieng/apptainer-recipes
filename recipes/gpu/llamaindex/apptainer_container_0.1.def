@@ -20,6 +20,9 @@ From: ollama/ollama:latest
     conda config --add channels conda-forge
     conda install conda-forge::llama-index
 
+    # install ollama python package
+    conda install conda-forge::ollama
+
 %environment
     export PATH="/opt/conda/bin:$PATH"
     . /opt/conda/etc/profile.d/conda.sh
