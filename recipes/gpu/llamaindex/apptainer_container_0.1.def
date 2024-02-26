@@ -18,10 +18,13 @@ From: ollama/ollama:latest
 
     # install llama-index
     conda config --add channels conda-forge
-    conda install conda-forge::llama-index
+    conda install -c conda-forge llama-index
 
-    # install ollama python package
-    conda install conda-forge::ollama
+    # numpy, matplotlib, pandas, rich, jupyter
+    conda install -c conda-forge numpy matplotlib pandas rich jupyterlab ipykernel
+
+    # configuration of jupyter
+    pip3 install jupyterlab_theme_solarized_dark
 
 %environment
     export PATH="/opt/conda/bin:$PATH"
