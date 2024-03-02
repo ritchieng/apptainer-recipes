@@ -16,14 +16,20 @@ From: ollama/ollama:latest
     # apt-get install python3
     apt-get install -y python3-pip
 
-    # install llama-index
+    # configure conda
     conda config --add channels conda-forge
-    conda install -c conda-forge llama-index
 
-    # numpy, matplotlib, pandas, rich, jupyter
+    # install llamaindex
+    pip3 install llama-index 
+    # for offline models and embeddings
+    pip3 install llama-index-llms-ollama llama-index-embeddings-ollama llama-index-multi-modal-llms-ollama llama-index-embeddings-huggingface
+
+    # llamaindex integrations https://llamahub.ai/
+
+    # install numpy, matplotlib, pandas, rich, jupyter
     conda install -c conda-forge numpy matplotlib pandas rich jupyterlab ipykernel
 
-    # configuration of jupyter
+    # configuration of jupyter lab
     pip3 install jupyterlab_theme_solarized_dark
 
 %environment
